@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="inp"></p>
+
+<button onclick="asc()">Sort-A</button>
+<button onclick="des()">Sort-D</button>
+<button onclick="Search()">Search</button>
+
+<p id="asc"></p>
+<p id="des"></p>
+<p id="srch"></p>
+
+
+<script>
+var points = ["40", "100", "1", "5", "25", "10", "27", "65", "45", "6"];
+document.getElementById("inp").innerHTML = "<b>Array</b>" +": "+ points;
+
+function asc() {
+  points.sort(function(a, b){return a-b});
+  document.getElementById("asc").innerHTML = points;
+}
+
+function des() {
+  points.sort(function(a, b){return b-a});
+  document.getElementById("des").innerHTML = points;
+}
+
+function Search() {
+var ele=prompt("Enter the Search Element");
+var index = points.indexOf(ele);
+if(index !== -1){
+	document.getElementById("srch").innerHTML= ele +"- Element Found!";
+}
+else{
+	document.getElementById("srch").innerHTML="Element not found in the array."
+}
+
+}
+</script>
+
+</body>
+</html>

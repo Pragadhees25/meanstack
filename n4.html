@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check String</title>
+</head>
+<body>
+Enter Text:<input type="text" id="textbox">
+<button onclick="pali()">Palindrome</button>
+<button onclick="vow()">Vowels</button>
+<button onclick="rev()">Reverse</button>
+<p id="pali"></p>
+<p id="vow"></p>
+<p id="rev"></p>
+<script>
+    
+    function pali(){
+        var revStr = "";
+        var str=document.getElementById("textbox").value;
+                var i = str.length;
+                for(var j=i; j>=0; j--) {
+                revStr = revStr+str.charAt(j);
+                }
+                if(str == revStr) {
+                document.getElementById("pali").innerHTML=str +" "+"<b> is Palindrome</b>";
+                } else {
+                document.getElementById("pali").innerHTML=str +" "+"<b>is not a Palindrome</b>";
+                }
+    }
+    function vow(){
+    var str=document.getElementById("textbox").value;
+            var count = 0;
+            for (var i = 0; i < str.length; i++) 
+            {
+                if (str.charAt(i).match(/[aeiouAEIOU]/))
+                    count++;
+            }
+            document.getElementById('vow').innerHTML = "<b>Total no.of Vowels:</b>"+count;
+    }
+    function rev(){
+        var str=document.getElementById("textbox").value;
+        var newString = "";
+        for (var i = str.length - 1; i >= 0; i--) {
+        newString += str[i];
+        }
+         document.getElementById('rev').innerHTML = "<b>Reversed String:</b>"+newString;
+
+    }
+
+</script>
+</body>
+</html>
